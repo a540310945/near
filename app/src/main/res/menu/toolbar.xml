@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/test_backup"
+        android:icon="@drawable/back_white"
+        android:title="backup"
+        app:showAsAction="always">
+
+    </item>
+
+    <item
+        android:id="@+id/test_plus"
+        android:icon="@drawable/icon_plus"
+        android:title="plus"
+        app:showAsAction="ifRoom">
+
+    </item>
+
+    <item
+        android:id="@+id/test_setting"
+        android:icon="@drawable/setting"
+        android:title="setting"
+        app:showAsAction="never">
+
+    </item>
+</menu>

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffafafa"
+    android:orientation="vertical"
+    tools:context="com.hitoncloud.near.Activity.OrderActivity">
+
+
+
+    <!--顶部toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:navigationIcon="@mipmap/ic_back"
+        android:theme="@style/ToolbarTheme"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="@mipmap/ic_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/srl_order"
+        android:layout_below="@+id/toolbar_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fbfbfb"
+        app:srlPrimaryColor="@color/theme"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnablePreviewInEditMode="true">
+        <!--srlAccentColor srlPrimaryColor 将会改变 Header 和 Footer 的主题颜色-->
+        <!--srlEnablePreviewInEditMode 可以开启和关闭预览功能-->
+        <com.scwang.smartrefresh.header.BezierCircleHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ScrollView
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--身体-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fbfbfb"
+                android:id="@+id/confirmorder_taskdetails_relative1"
+                >
+
+                <!--任务介绍头部-->
+                <LinearLayout
+                    android:id="@+id/ll_order_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:background="@color/theme" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="任务介绍"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/theme"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp"
+                        />
+                </LinearLayout>
+
+                <!--分割线-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#ccc"
+                    android:id="@+id/iv_order_divider1"
+                    android:layout_below="@id/ll_order_introduce"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                   />
+
+                <!--任务名称-->
+                <TextView
+                    android:id="@+id/tv_order_taskname_key"
+                    android:layout_below="@+id/iv_order_divider1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="任务名称："
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"/>
+
+                <!--任务名称-->
+                <TextView
+                    android:id="@+id/tv_order_taskname_value"
+                    android:layout_alignTop="@+id/tv_order_taskname_key"
+                    android:layout_toEndOf="@+id/tv_order_taskname_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="加载任务名称中……"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+
+                <!--任务时限-->
+                <TextView
+                    android:id="@+id/tv_order_tasktime_key"
+                    android:layout_below="@+id/tv_order_taskname_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="任务时限："
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="14dp"/>
+
+                <!--任务时限-->
+                <TextView
+                    android:id="@+id/tv_order_tasktime_value"
+                    android:layout_alignTop="@+id/tv_order_tasktime_key"
+                    android:layout_toEndOf="@+id/tv_order_tasktime_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="加载任务时间中……"
+                    android:textColor="@color/text_black"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:textSize="14sp" />
+
+                <!--任务地点-->
+                <TextView
+                    android:id="@+id/tv_order_taskloc_key"
+                    android:layout_below="@+id/tv_order_tasktime_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="任务地点："
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="14dp"/>
+
+                <!--任务地点-->
+                <TextView
+                    android:id="@+id/tv_order_taskloc_value"
+                    android:layout_alignTop="@+id/tv_order_taskloc_key"
+                    android:layout_toEndOf="@+id/tv_order_taskloc_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="加载任务地点中"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+
+                <!--任务详情描述-->
+                <TextView
+                    android:id="@+id/tv_order_taskdetails_key"
+                    android:layout_below="@+id/tv_order_taskloc_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="任务描述："
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="14dp"/>
+
+                <!--任务详情描述-->
+                <TextView
+                    android:id="@+id/tv_order_taskdetails_value"
+                    android:layout_alignTop="@+id/tv_order_taskdetails_key"
+                    android:layout_toEndOf="@+id/tv_order_taskdetails_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="加载任务详情中……"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+
+                <!--悬赏金额-->
+                <TextView
+                    android:id="@+id/tv_order_taskmoney_key"
+                    android:layout_below="@+id/tv_order_taskdetails_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="悬赏金额："
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="14dp"/>
+
+                <!--悬赏金额-->
+                <TextView
+                    android:id="@+id/tv_order_taskmoney_value"
+                    android:layout_alignTop="@+id/tv_order_taskmoney_key"
+                    android:layout_toEndOf="@+id/tv_order_taskmoney_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="0"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+
+                <!--发布介绍头部-->
+                <LinearLayout
+                    android:id="@+id/ll_order_publisher"
+                    android:layout_below="@id/tv_order_taskmoney_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:background="@color/theme" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="人员信息"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/theme"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp"
+                        />
+                </LinearLayout>
+
+                <!--分割线-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#ccc"
+                    android:id="@+id/iv_order_divider2"
+                    android:layout_below="@id/ll_order_publisher"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    />
+
+                <!--发布者名称-->
+                <TextView
+                    android:id="@+id/tv_order_nickname_key"
+                    android:layout_below="@+id/iv_order_divider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发布者："
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"/>
+
+                <!--发布者名称-->
+                <TextView
+                    android:id="@+id/tv_order_nickname_value"
+                    android:layout_alignTop="@+id/tv_order_nickname_key"
+                    android:layout_toEndOf="@+id/tv_order_nickname_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="加载任务发布者中……"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+
+                <!--联系方式-->
+                <TextView
+                    android:id="@+id/tv_order_contact_key"
+                    android:layout_below="@+id/tv_order_nickname_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系方式："
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="14dp"/>
+
+                <!--联系方式-->
+                <TextView
+                    android:id="@+id/tv_order_contact_value"
+                    android:layout_alignTop="@+id/tv_order_contact_key"
+                    android:layout_toEndOf="@+id/tv_order_contact_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="加载联系方式中……"
+                    android:textColor="@color/text_black"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_below="@id/tv_order_contact_value"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_height="40dp">
+
+                    <com.rey.material.widget.Button
+                        android:visibility="visible"
+                        android:id="@+id/btn_order_session"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="会话联系"
+                        android:textColor="@color/white"
+                        android:background="@drawable/btn_session"/>
+
+                    <com.rey.material.widget.Button
+                        android:visibility="visible"
+                        android:id="@+id/btn_order_phone"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="电话联系"
+                        android:textColor="@color/theme"
+                        android:background="@drawable/btn_telphone"/>
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+
+
+
+    <!--底部提交-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_order_ensure"
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/money"
+                android:tint="@color/theme" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:text="该订单的悬赏金额为"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_order_ensuremoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:text="0"
+                android:textColor="@color/theme"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:text="元"
+                android:textColor="@color/text_black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_order_ensure"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_session"
+            android:text="确认订单/确认抢单/确认退款"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            />
+
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_order_cancel"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_order_cancel"
+            android:text="取消任务"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:id="@+id/rl_carditem_news_root">
+        <RelativeLayout
+            android:id="@+id/rl_carditem_news_divider"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#eee">
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_carditem_news_top"
+            android:layout_below="@id/rl_carditem_news_divider"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+                <ImageView
+                    android:id="@+id/iv_carditem_news_publisher"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="31dp"
+                    android:layout_height="31dp"
+                    android:src="@drawable/icon_card_news"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_carditem_news_publisher"
+                    android:textColor="#444"
+                    android:text="Near新闻中心"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_carditem_news_publisher"
+                    android:layout_toEndOf="@id/iv_carditem_news_publisher"
+                    android:layout_marginStart="10dp"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_carditem_news_publishtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/tv_carditem_news_publisher"
+                    android:text="07-09-15"
+                    android:textSize="12sp"
+                    android:layout_below="@+id/tv_carditem_news_publisher"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_carditem_news_body"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/rl_carditem_news_top">
+
+                <ImageView
+                    android:id="@+id/iv_carditem_news_newsimg"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_carditem_news_newstitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/iv_carditem_news_newsimg"
+                    android:layout_marginStart="10dp"
+                    android:layout_alignTop="@+id/iv_carditem_news_newsimg"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="“挑战杯”上，成都东软学院再获佳绩！"/>
+
+                <TextView
+                    android:id="@+id/tv_carditem_news_newsabstract"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_carditem_news_newstitle"
+                    android:layout_toEndOf="@+id/iv_carditem_news_newsimg"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="第十四届“挑战杯”四川省大学生课外学术科技作品竞赛终审决赛……"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_carditem_news_bottom"
+            android:layout_below="@+id/rl_carditem_news_body"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true">
+      ">
+                <TextView
+                    android:id="@+id/tv_carditem_news_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#f8f8f8"
+                    android:gravity="center"
+                    android:text="获取真相"/>
+
+
+        </RelativeLayout>
+
+</RelativeLayout>

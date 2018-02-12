@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.hitoncloud.near.Activity.WebviewActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:navigationIcon="@mipmap/ic_back"
+        android:theme="@style/ToolbarTheme"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="@mipmap/ic_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/wv_webview"
+        android:layout_below="@+id/toolbar_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </com.tencent.smtt.sdk.WebView>
+    
+    
+</RelativeLayout>

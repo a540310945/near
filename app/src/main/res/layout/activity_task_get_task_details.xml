@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_task_get_task_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffafafa"
+    android:orientation="vertical"
+    tools:context="com.hitoncloud.near.TaskGet_taskDetails">
+
+    <!--头部信息-->
+    <LinearLayout
+        android:id="@+id/taskget_taskdetails_linear2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/qingse"
+        android:orientation="horizontal">
+        <!--返回按钮触碰区-->
+        <LinearLayout
+            android:id="@+id/task_taskdetails_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back_white" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="任务详情"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/taskget_taskdetails_linear1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/qingse"
+        android:gravity="center_horizontal|center_vertical">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="1\n查看任务"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/triangle" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="2\n确认要求"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/triangle" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="3\n接受订单"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/triangle" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="4\n完成任务"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/triangle" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="5\n获得悬赏"
+            android:textColor="#ffffff"
+            android:textSize="10sp" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:nestedScrollingEnabled="true"
+        android:id="@+id/taskget_taskdetails_scrollview"
+        android:layout_above="@+id/activity_task_accept"
+        android:layout_below="@+id/taskget_taskdetails_linear1"
+        android:fillViewport="false"
+        >
+      <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/taskget_taskdetails_relative1"
+            >
+
+            <TextView
+                android:id="@+id/taskget_taskdetails_abstracts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务简要"
+                android:textColor="#00CED1"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                />
+
+            <ImageView
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ccc"
+                android:id="@+id/taskget_taskdetails_abdiv"
+                android:layout_below="@id/taskget_taskdetails_abstracts"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"/>
+
+
+            <TextView
+                android:id="@+id/taskget_taskdetails_dtaskname"
+                android:layout_below="@+id/taskget_taskdetails_abdiv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务名称："
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/taskget_taskdetails_taskname"
+                android:layout_alignTop="@+id/taskget_taskdetails_dtaskname"
+                android:layout_toRightOf="@+id/taskget_taskdetails_dtaskname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/taskget_taskdetails_dtasktime"
+                android:layout_below="@+id/taskget_taskdetails_dtaskname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务时限：" android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="14dp"/>
+
+
+            <TextView
+                android:id="@+id/taskget_taskdetails_tasktime"
+                android:layout_alignTop="@+id/taskget_taskdetails_dtasktime"
+                android:layout_toRightOf="@+id/taskget_taskdetails_dtasktime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/taskget_taskdetails_dtaskloc"
+                android:layout_below="@+id/taskget_taskdetails_dtasktime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务地点："
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="14dp"/>
+
+            <TextView
+                android:id="@+id/taskget_taskdetails_taskloc"
+                android:layout_alignTop="@+id/taskget_taskdetails_dtaskloc"
+                android:layout_toRightOf="@+id/taskget_taskdetails_dtaskloc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+          <TextView
+              android:id="@+id/taskget_taskdetails_dtaskmoeny"
+              android:layout_below="@+id/taskget_taskdetails_dtaskloc"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="悬赏金额："
+              android:textColor="#000"
+              android:textSize="16sp"
+              android:layout_marginStart="25dp"
+              android:layout_marginTop="14dp"/>
+
+          <TextView
+              android:id="@+id/taskget_taskdetails_taskmoeny"
+              android:layout_alignTop="@+id/taskget_taskdetails_dtaskmoeny"
+              android:layout_toRightOf="@+id/taskget_taskdetails_dtaskmoeny"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#000"
+              android:textSize="16sp" />
+
+
+
+
+
+          <TextView
+              android:layout_below="@+id/taskget_taskdetails_taskmoeny"
+              android:id="@+id/taskget_taskdetails_senderinfo"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="发布者信息"
+              android:textColor="#00CED1"
+              android:layout_marginStart="20dp"
+              android:textSize="18sp"
+              android:layout_marginTop="25dp"
+              />
+
+          >
+          <ImageView
+              android:layout_gravity="bottom"
+              android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:background="#ccc"
+              android:id="@+id/taskget_taskdetails_sinfodiv"
+              android:layout_below="@+id/taskget_taskdetails_senderinfo"
+              android:layout_marginStart="20dp"
+              android:layout_marginEnd="20dp"
+              android:layout_marginTop="15dp"/>
+
+          <TextView
+              android:id="@+id/taskget_taskdetails_dtasksender"
+              android:layout_below="@+id/taskget_taskdetails_sinfodiv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="任务发布者："
+              android:textColor="#000"
+              android:textSize="16sp"
+              android:layout_marginStart="25dp"
+              android:layout_marginTop="20dp"/>
+
+          <TextView
+              android:id="@+id/taskget_taskdetails_tasksender"
+              android:layout_alignTop="@+id/taskget_taskdetails_dtasksender"
+              android:layout_toRightOf="@+id/taskget_taskdetails_dtasksender"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text=""
+              android:textColor="#000"
+              android:textSize="16sp" />
+
+          <TextView
+              android:id="@+id/taskget_taskdetails_dtasktel"
+              android:layout_below="@+id/taskget_taskdetails_dtasksender"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="联系电话："
+              android:textColor="#000"
+              android:textSize="16sp"
+              android:layout_marginStart="25dp"
+              android:layout_marginTop="20dp"/>
+
+          <TextView
+              android:id="@+id/taskget_taskdetails_tasktel"
+              android:layout_alignTop="@+id/taskget_taskdetails_dtasktel"
+              android:layout_toRightOf="@+id/taskget_taskdetails_dtasktel"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#00CED1"
+              android:textSize="16sp" />
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="        电话联系        "
+              android:textSize="16sp"
+              android:padding="10sp"
+              android:background="#00CED1"
+              android:textColor="#fff"
+              android:layout_marginTop="10dp"
+              android:id="@+id/taskget_taskdetails_telbtn"
+              android:layout_below="@+id/taskget_taskdetails_tasktel"
+              android:layout_marginStart="20dp"/>
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="        会话聊天        "
+              android:textSize="16sp"
+              android:padding="10sp"
+              android:background="@drawable/blue_rect"
+              android:textColor="#00CED1"
+              android:layout_marginTop="10dp"
+              android:id="@+id/taskget_taskdetails_sessionbtn"
+              android:layout_below="@+id/taskget_taskdetails_tasktel"
+              android:layout_toRightOf="@+id/taskget_taskdetails_telbtn"
+              android:layout_marginStart="15dp"/>
+
+          <TextView
+              android:layout_below="@+id/taskget_taskdetails_sessionbtn"
+              android:id="@+id/taskget_taskdetails_taskdetails"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="任务详情"
+              android:textColor="#00CED1"
+              android:layout_marginStart="25dp"
+              android:textSize="18sp"
+              android:layout_marginTop="25dp"
+              />
+
+          >
+          <ImageView
+              android:layout_gravity="bottom"
+              android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:background="#ccc"
+              android:id="@+id/taskget_taskdetails_detailsdiv"
+              android:layout_below="@+id/taskget_taskdetails_taskdetails"
+              android:layout_marginStart="20dp"
+              android:layout_marginEnd="20dp"
+              android:layout_marginTop="15dp"/>
+
+          <TextView
+              android:id="@+id/taskget_taskdetails_ddetails"
+              android:layout_below="@+id/taskget_taskdetails_detailsdiv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="详细信息:"
+              android:textColor="#000"
+              android:textSize="16sp"
+              android:layout_marginStart="25dp"
+              android:layout_marginTop="20dp"/>
+
+          <TextView
+              android:id="@+id/taskget_taskdetails_details"
+              android:layout_alignTop="@+id/taskget_taskdetails_ddetails"
+              android:layout_toRightOf="@+id/taskget_taskdetails_ddetails"
+              android:layout_width="wrap_content"
+              android:layout_marginRight="20dp"
+              android:layout_height="wrap_content"
+              android:textColor="#000"
+              android:textSize="16sp" />
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:layout_below="@+id/taskget_taskdetails_details"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00CED1"
+        android:text="接受任务"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:id="@+id/taskget_taskdetails_taskaccept"
+        />
+
+</LinearLayout>

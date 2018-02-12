@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_scanrequest_root"
+    tools:context="com.hitoncloud.near.homepage.ScanRequestActivity">
+
+    <LinearLayout
+        android:id="@+id/rl_scanrequest_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/qingse">
+
+        <RelativeLayout
+            android:id="@+id/rl_scanrequest_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_scanrequest_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back_white" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:layout_below="@+id/rl_scanrequest_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="你扫描的二维码可能是个假的"
+        android:id="@+id/tv_scanrequest_result"/>
+
+    <WebView
+        android:id="@+id/wb_scanrequest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_scanrequest_bar">
+
+    </WebView>
+
+
+</RelativeLayout>

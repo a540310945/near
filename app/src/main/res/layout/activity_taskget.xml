@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_task_accept"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.hitoncloud.near.task.TasktAcceptActivity">
+
+    <!--头部-->
+    <LinearLayout
+        android:id="@+id/TaskGet_linear1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/qingse"
+        android:orientation="horizontal">
+        <!--返回按钮触碰区-->
+        <LinearLayout
+            android:id="@+id/TaskGet_backlinear"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/TaskGet_back"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back_white" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="任务接受"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!--顶部任务类型导航-->
+
+        <LinearLayout
+            android:id="@+id/TaskGet_linear2"
+            android:layout_below="@+id/TaskGet_linear1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="vertical"
+            >
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/TaskGet_Type_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/TaskGet_Tablinear"
+                android:layout_width="match_parent"
+                android:layout_height="5dp">
+                <ImageView
+                    android:id="@+id/TaskGet_tab"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="#0fd"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    <!--导航具体内容-->
+    <android.support.v4.view.ViewPager
+        android:layout_below="@+id/TaskGet_linear2"
+        android:id="@+id/taskaccept_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ebebeb"
+        android:layout_weight="1" >
+
+    </android.support.v4.view.ViewPager>
+
+
+
+</RelativeLayout>

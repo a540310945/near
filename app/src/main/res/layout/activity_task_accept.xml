@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hitoncloud.near.Activity.TaskAcceptActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_taskaccept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:navigationIcon="@mipmap/ic_back"
+        android:theme="@style/ToolbarTheme"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="@mipmap/ic_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/toolbar_taskaccept"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--顶部任务选项卡导航-->
+        <LinearLayout
+            android:id="@+id/ll_taskaccept_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_accept_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/ll_taskaccept_tab"
+                android:layout_width="match_parent"
+                android:layout_height="2dp">
+
+                <ImageView
+                    android:id="@+id/iv_taskaccept_tab"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="#0fd" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--导航具体内容-->
+        <com.hitoncloud.near.myview.MyViewPager
+            android:id="@+id/vp_taskaccept"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_taskaccept_navigation"
+            android:layout_weight="1"
+            android:background="#f8f7f7"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

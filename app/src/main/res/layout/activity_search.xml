@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hitoncloud.near.Activity.SearchTaskActivity">
+
+    <!--顶部toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:navigationIcon="@mipmap/ic_back"
+        android:theme="@style/ToolbarTheme"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="@mipmap/ic_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <!--搜索任务框-->
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_below="@id/toolbar_search"
+        android:id="@+id/met_search_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/text_content"
+        android:hint="请输入要查询的任务"
+        android:maxLength="11"
+        app:met_singleLineEllipsis="true"
+        app:met_textColorHint="@color/text_content"
+        app:met_primaryColor="@color/theme"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="搜索条件长度不能超过11位哦"
+        app:met_baseColor="@color/text_hint"
+        app:met_floatingLabelTextColor="@color/theme"
+        app:met_textColor="@color/text_black" />
+
+    <!--任务详情列表-->
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/srl_searchdetails"
+        android:layout_below="@+id/met_search_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:srlPrimaryColor="@color/white"
+        app:srlAccentColor="@color/text_black"
+        app:srlEnablePreviewInEditMode="true"
+        android:visibility="gone">
+        <!--srlAccentColor srlPrimaryColor 将会改变 Header 和 Footer 的主题颜色-->
+        <!--srlEnablePreviewInEditMode 可以开启和关闭预览功能-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--身体-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_search_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    >
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:id="@+id/srl_taskdetails_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search_brief"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:layout_below="@+id/met_search_text">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_task_demand"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context="com.hitoncloud.near.Activity.TaskEditTimeActivity">
+
+    <!--顶部toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_taskedittime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:navigationIcon="@mipmap/ic_back"
+        android:theme="@style/ToolbarTheme"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="@mipmap/ic_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <!--时间确认按钮-->
+            <RelativeLayout
+                android:id="@+id/rl_taskedittime_ensure"
+                android:layout_width="46dp"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/slc_barbtn"
+                android:clickable="true"
+                android:layout_gravity="right"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确定"
+                    android:textColor="#fff"/>
+
+            </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/rl_taskedittime_starttime"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar_taskedittime"
+        android:background="@drawable/rl_bg_slc_white2gray_withborder"
+        android:clickable="true"
+        >
+
+        <ImageView
+            android:id="@+id/iv_taskedittime_starttime"
+            android:layout_centerVertical="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/icon_starttime" />
+
+        <TextView
+            android:id="@+id/tv_taskedittime_starttime_key"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/iv_taskedittime_starttime"
+            android:gravity="center_vertical"
+            android:text="开始时间："
+            android:textColor="@color/text_black" />
+
+        <TextView
+            android:id="@+id/tv_taskedittime_starttime_value"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_toEndOf="@id/tv_taskedittime_starttime_key"
+            android:text=""/>
+
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/icon_arrowright" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_taskedittime_endtime"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rl_taskedittime_starttime"
+        android:background="@drawable/rl_bg_slc_white2gray_withborder"
+        android:clickable="true"
+        >
+
+        <ImageView
+            android:id="@+id/iv_taskedittime_endtime"
+            android:layout_centerVertical="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/icon_endtime" />
+
+        <TextView
+            android:id="@+id/tv_taskedittime_endtime_key"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/iv_taskedittime_endtime"
+            android:gravity="center_vertical"
+            android:text="截止时间："
+            android:textColor="@color/text_black" />
+
+        <TextView
+            android:id="@+id/tv_taskedittime_endtime_value"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_toEndOf="@id/tv_taskedittime_endtime_key"
+            android:text=""/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/icon_arrowright" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

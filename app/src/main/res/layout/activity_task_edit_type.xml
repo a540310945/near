@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hitoncloud.near.Activity.TaskEditTypeActivity">
+
+    <!--顶部toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_taskedittype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:navigationIcon="@mipmap/ic_back"
+        android:theme="@style/ToolbarTheme"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="@mipmap/ic_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <!--时间确认按钮-->
+        <RelativeLayout
+            android:id="@+id/rl_taskedittype_ensure"
+            android:layout_width="46dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/slc_barbtn"
+            android:clickable="true"
+            android:layout_gravity="right"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确定"
+                android:textColor="#fff"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/ms_taskedittype_first"
+        android:layout_below="@id/toolbar_taskedittype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ms_arrow_tint="@color/theme"/>
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:visibility="gone"
+        android:id="@+id/ms_taskedittype_second"
+        android:layout_below="@id/ms_taskedittype_first"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ms_arrow_tint="@color/theme"/>
+
+
+
+</RelativeLayout>

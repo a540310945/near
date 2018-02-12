@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="recommend">
+        <item>干锅</item>
+        <item>鱿鱼</item>
+        <item>火腿</item>
+        <item>鸡蛋</item>
+        <item>鸡蛋</item>
+        <item>鸡蛋</item>
+        <item>鸡蛋</item>
+
+
+
+    </string-array>
+</resources>

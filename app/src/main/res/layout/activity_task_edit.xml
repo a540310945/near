@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_task_demand"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context="com.hitoncloud.near.Activity.TaskEditActivity">
+
+    <!--顶部toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_taskedit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:navigationIcon="@mipmap/ic_back"
+        android:theme="@style/ToolbarTheme"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="@mipmap/ic_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <!--发布按钮-->
+            <RelativeLayout
+                android:id="@+id/rl_taskedit_ensure"
+                android:layout_width="46dp"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/slc_barbtn"
+                android:clickable="true"
+                android:layout_gravity="right"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发布"
+                    android:textColor="#fff"/>
+
+            </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_taskedit"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_below="@+id/toolbar_taskedit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f4f4f4"
+        app:srlPrimaryColor="@color/theme"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnablePreviewInEditMode="true">
+        <!--srlAccentColor srlPrimaryColor 将会改变 Header 和 Footer 的主题颜色-->
+        <!--srlEnablePreviewInEditMode 可以开启和关闭预览功能-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--身体-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--任务名称-->
+                <LinearLayout
+                    android:id="@+id/ll_taskedit_taskname"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_bottom_gray_style2"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/icon_taskname"/>
+
+                    <EditText
+                        android:id="@+id/et_taskedit_taskname"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="20dp"
+                        android:hint="请输入任务名称"
+                        android:textSize="14sp"
+                        android:textColorHint="@color/text_hint"
+                        android:textColor="@color/text_black"
+                        android:background="@null"/>
+
+                </LinearLayout>
+
+                <!--任务地点-->
+                <LinearLayout
+                    android:id="@+id/ll_taskedit_taskloc"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/ll_taskedit_taskname"
+                    android:background="@drawable/border_bottom_gray_style2"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/icon_taskloc"/>
+
+                    <EditText
+                        android:id="@+id/et_taskedit_taskloc"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="20dp"
+                        android:hint="请输入任务地点"
+                        android:textColorHint="@color/text_hint"
+                        android:textColor="@color/text_black"
+                        android:textSize="14sp"
+                        android:maxLines="1"
+                        android:background="@null"/>
+
+                </LinearLayout>
+
+                <!--任务时间-->
+                <RelativeLayout
+                    android:id="@+id/rl_taskedit_tasktime"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/ll_taskedit_taskloc"
+                    android:background="@drawable/rl_bg_slc_white2gray_withborder"
+                    android:clickable="true"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_taskedit_timeicon"
+                        android:layout_centerVertical="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/icon_tasktime" />
+
+                    <TextView
+                        android:id="@+id/tv_taskedit_timehint"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@+id/iv_taskedit_timeicon"
+                        android:gravity="center_vertical"
+                        android:text="任务限定时间"
+                        android:textColor="@color/text_black"
+                        android:ellipsize="marquee"/>
+
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/icon_arrowright" />
+
+
+
+                </RelativeLayout>
+
+                <!--任务类型-->
+                <RelativeLayout
+                    android:id="@+id/rl_taskedit_tasktype"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/rl_taskedit_tasktime"
+                    android:background="@drawable/rl_bg_slc_white2gray_withborder"
+                    android:clickable="true"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_taskedit_tasktype"
+                        android:layout_centerVertical="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/icon_tasktype" />
+
+                    <TextView
+                        android:id="@+id/tv_taskedit_typehint"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@+id/iv_taskedit_tasktype"
+                        android:gravity="center_vertical"
+                        android:text="选择任务类型"
+                        android:textColor="@color/text_black" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/icon_arrowright" />
+
+
+
+                </RelativeLayout>
+
+                <!--悬赏金额-->
+                <LinearLayout
+                    android:id="@+id/ll_taskedit_taskmoney"
+                    android:layout_below="@id/rl_taskedit_tasktype"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_bottom_gray_style2"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/icon_reward"/>
+
+                    <EditText
+                        android:id="@+id/et_taskedit_taskmoney"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="20dp"
+                        android:hint="请输入悬赏金额"
+                        android:textSize="14sp"
+                        android:textColorHint="@color/text_hint"
+                        android:textColor="@color/text_black"
+                        android:background="@null"/>
+
+                </LinearLayout>
+
+                <!--联系方式-->
+                <RelativeLayout
+                    android:id="@+id/rl_taskedit_taskconnecter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/ll_taskedit_taskmoney"
+                    android:background="#fff"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rl_taskedit_taskconnecter_cb"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <ImageView
+                            android:id="@+id/iv_taskedit_connectionicon"
+                            android:layout_centerVertical="true"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="30dp"
+                            android:src="@drawable/icon_taskconnection" />
+
+
+                        <com.rey.material.widget.CheckBox
+                            android:id="@+id/cb_taskedit_session"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="13dp"
+                            android:checked="true"
+                            android:enabled="false"
+                            android:layout_toRightOf="@+id/iv_taskedit_connectionicon"
+                            android:layout_centerVertical="true"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_taskedit_cbtxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textSize="14sp"
+                            android:text="会话联系(默认)"
+
+                            android:layout_toRightOf="@+id/cb_taskedit_session"
+                            android:textColor="@color/text_black" />
+
+                        <com.rey.material.widget.CheckBox
+                            android:id="@+id/cb_taskedit_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_hint"
+                            android:layout_toRightOf="@+id/tv_taskedit_cbtxt"
+                            android:layout_centerVertical="true"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textSize="14sp"
+                            android:text="电话联系(推荐)"
+                            android:layout_toRightOf="@+id/cb_taskedit_phone"
+                            android:textColor="@color/text_black" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/ll_taskedit_taskphone"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/rl_taskedit_taskconnecter_cb"
+                        android:background="@drawable/border_top_gray_style2"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="30dp"
+                            android:tint="@color/theme"
+                            android:src="@drawable/icon_phone"/>
+
+                        <EditText
+                            android:id="@+id/et_taskedit_taskphone"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="20dp"
+                            android:hint="请输入手机号"
+                            android:textSize="14sp"
+                            android:textColorHint="@color/text_hint"
+                            android:textColor="@color/text_black"
+                            android:background="@null"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!--任务描述-->
+                <RelativeLayout
+                    android:id="@+id/rl_taskedit_taskdetails"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentStart="true"
+                    android:background="#fff"
+                    android:layout_below="@+id/rl_taskedit_taskconnecter"
+                    >
+
+                    <EditText
+                        android:id="@+id/et_taskedit_taskdetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:background="#fff"
+                        android:hint="请对任务进行详细描述（如需要接单者做些什么，男女限定等），为方便联系，建议备注QQ号"
+                        android:textColor="@color/text_black"
+                        android:textSize="14sp"
+                        android:gravity="top"
+                        />
+
+
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+
+
+</RelativeLayout>

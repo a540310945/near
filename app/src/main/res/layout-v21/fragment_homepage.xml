@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/col_homepage_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hitoncloud.near.Fragment.HomepageFragment">
+
+
+    <!--顶部toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:weightSum="1"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        <!--toolbar的内容-->
+        <LinearLayout
+            android:id="@+id/ll_homepage_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!--选择学校-->
+            <RelativeLayout
+                android:id="@+id/rl_homepage_school"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/slc_barbtn"
+                android:clickable="true"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_homepage_school"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="2dp"
+                    android:text="成都东.."
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_homepage_school"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/tv_homepage_school"
+                    android:clickable="false"
+                    android:src="@drawable/ic_arrowdown" />
+
+            </RelativeLayout>
+
+            <!--标题-->
+            <RelativeLayout
+                android:id="@+id/rl_homepage_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+
+                <TextView
+                    android:id="@+id/tv_homepage_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="首页"
+                    android:textColor="@color/title"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <!--占位用-->
+            <RelativeLayout
+                android:layout_width="34dp"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+            <!--搜索按钮-->
+            <RelativeLayout
+                android:id="@+id/rl_homepage_search"
+                android:layout_width="46dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/slc_barbtn"
+                android:clickable="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_homepage_search"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:clickable="false"
+                    android:src="@drawable/icon_search" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/srl_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_homepage"
+        android:background="#f4f4f4"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnablePreviewInEditMode="true"
+        app:srlPrimaryColor="@color/theme">
+        <!--srlAccentColor srlPrimaryColor 将会改变 Header 和 Footer 的主题颜色-->
+        <!--srlEnablePreviewInEditMode 可以开启和关闭预览功能-->
+        <com.scwang.smartrefresh.header.BezierCircleHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <!--身体-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F8F7F7">
+
+
+                <!--广告轮播-->
+                <com.youth.banner.Banner
+                    android:id="@+id/banner_homepage"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp">
+
+                </com.youth.banner.Banner>
+
+                <!--滚动公告-->
+                <LinearLayout
+                    android:id="@+id/ll_annoucement"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/banner_homepage"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_homepage_announcement"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <com.sunfusheng.marqueeview.MarqueeView
+                        android:id="@+id/tv_homepage_announcement"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:mvAnimDuration="1000"
+                        app:mvDirection="bottom_to_top"
+                        app:mvGravity="left"
+                        app:mvInterval="3000"
+                        app:mvSingleLine="true"
+                        app:mvTextColor="@color/text_content"
+                        app:mvTextSize="12sp">
+
+                    </com.sunfusheng.marqueeview.MarqueeView>
+
+                </LinearLayout>
+
+                <!--功能服务-->
+                <LinearLayout
+                    android:id="@+id/ll_homepage_mainfunction"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/ll_annoucement"
+                    android:layout_marginTop="7dp"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="15dp"
+                            android:background="@color/theme" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:gravity="center_vertical"
+                            android:text="功能服务"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal">
+
+                        <!--任务达人-->
+                        <RelativeLayout
+                            android:id="@+id/rl_homepage_task"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/slc_white2gray"
+                            android:clickable="true">
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp">
+
+                                <TextView
+                                    android:id="@+id/tv_homepage_tasktitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:text="任务达人"
+                                    android:textColor="@color/text_content"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_homepage_taskslogan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="随时随地，想做就做"
+                                    android:textColor="@color/text_hint"
+                                    android:textSize="10sp" />
+
+                                <ImageView
+                                    android:id="@+id/iv_homepage_taskmaster"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="20dp" />
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <!--乐享达人-->
+                        <RelativeLayout
+                            android:id="@+id/rl_homepage_enjoy"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/slc_white2gray"
+                            android:clickable="true">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp">
+
+                                <TextView
+                                    android:id="@+id/tv_homepage_enjoytitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:text="乐享达人"
+                                    android:textColor="@color/text_content"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_homepage_enjoyslogan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="吃喝玩乐，应有尽有"
+                                    android:textColor="@color/text_hint"
+                                    android:textSize="10sp" />
+
+
+                                <ImageView
+                                    android:id="@+id/iv_homepage_enjoymaster"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="20dp" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--生活服务-->
+                <LinearLayout
+                    android:id="@+id/ll_homepage_lifeservice"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/ll_homepage_mainfunction"
+                    android:layout_marginTop="0dp"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:layout_width="5dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="15dp"
+                            android:background="@color/theme" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:gravity="center_vertical"
+                            android:text="生活服务"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="horizontal">
+
+                        <!--二手交易-->
+                        <RelativeLayout
+                            android:id="@+id/rl_homepage_secondhand"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/slc_white2gray"
+                            android:clickable="true">
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp">
+
+                                <TextView
+                                    android:id="@+id/tv_homepage_sencondhand_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:text="二手交易"
+                                    android:textColor="@color/text_content"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_homepage_secondhand_slogan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="百步穿杨，一瞬即发"
+                                    android:textColor="@color/text_hint"
+                                    android:textSize="10sp" />
+
+                                <ImageView
+                                    android:id="@+id/iv_homepage_secondhand"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="20dp" />
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <!--失物招领-->
+                        <RelativeLayout
+                            android:id="@+id/rl_homepage_lost"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/slc_white2gray"
+                            android:clickable="true">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp">
+
+                                <TextView
+                                    android:id="@+id/tv_homepage_lost_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:text="失物招领"
+                                    android:textColor="@color/text_content"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_homepage_lost_slogan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="天涯海角，即刻就到"
+                                    android:textColor="@color/text_hint"
+                                    android:textSize="10sp" />
+
+
+                                <ImageView
+                                    android:id="@+id/iv_homepage_lost"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="20dp" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--新闻中心-->
+                <RelativeLayout
+                    android:id="@+id/rl_homepage_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/ll_homepage_lifeservice"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/slc_white2gray"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/iv_homepage_news"
+                        android:layout_width="81dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:background="@drawable/img_news" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/iv_homepage_news">
+
+                        <TextView
+                            android:id="@+id/tv_homepage_newshot1"
+                            android:singleLine="true"
+                            android:layout_width="180dp"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:ellipsize="end"
+                            android:text="加载中……"
+                            android:textColor="@color/text_content"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_homepage_newshot2"
+                            android:singleLine="true"
+                            android:layout_width="180dp"
+                            android:layout_height="20dp"
+                            android:layout_below="@id/tv_homepage_newshot1"
+                            android:gravity="center"
+                            android:ellipsize="end"
+                            android:text="加载中……"
+                            android:textColor="@color/text_content"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_homepage_newshot3"
+                            android:singleLine="true"
+                            android:layout_width="180dp"
+                            android:layout_height="20dp"
+                            android:layout_below="@id/tv_homepage_newshot2"
+                            android:gravity="center"
+                            android:ellipsize="end"
+                            android:text="加载中……"
+                            android:textColor="@color/text_content"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/icon_href"
+                        android:tint="@color/text_hint" />
+
+
+                </RelativeLayout>
+
+                <!--上拉惯性占位-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/rl_homepage_news"
+                    android:background="#f4f4f4"/>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+
+
+</RelativeLayout>
